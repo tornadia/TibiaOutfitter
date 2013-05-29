@@ -69,9 +69,9 @@ class Outfitter {
 
 		if ($creature) {
 			$tmpOutfit = null;
-			if (file_exists($outfitPath . $outfit . '/'.$animation.'_1_1_3.png'))
+			if (file_exists($outfitPath . $outfit . '/'.$animation.'_1_1_'.$direction.'.png'))
 				$tmpOutfit = imagecreatefrompng($outfitPath . $outfit . '/'.$animation.'_1_1_'.$direction.'.png');
-			if (file_exists($outfitPath . $outfit . '/1_1_1_1.png'))
+			elseif (file_exists($outfitPath . $outfit . '/1_1_1_1.png'))
 				$tmpOutfit = imagecreatefrompng($outfitPath . $outfit . '/1_1_1_1.png');
 			if ($tmpOutfit == null)
 				return;
